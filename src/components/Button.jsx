@@ -1,27 +1,27 @@
 const Button = ({
   label,
-  iconURl,
+  iconURL,
   backgroundColor,
   textColor,
   borderColor,
+  fullWidth,
 }) => {
   return (
     <button
-      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none rounded-full 
-    ${
-      backgroundColor
-        ? `${backgroundColor} ${textColor} ${borderColor}`
-        : "bg-coral-red  text-white border-coral-red"
-    }
-    `}
+      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none
+      ${
+        backgroundColor
+          ? `${backgroundColor} ${textColor} ${borderColor}`
+          : "bg-coral-red text-white border-coral-red"
+      } rounded-full ${fullWidth && "w-full"}`}
     >
       {label}
 
-      {iconURl && (
+      {iconURL && (
         <img
-          src={iconURl}
-          alt="arrow right icon"
-          className="ml-2 rounded-full w-5 h-5 transition duration-100 ease hover:translate-x-2"
+          src={iconURL}
+          alt='arrow right icon'
+          className='ml-2 rounded-full bg-white w-5 h-5'
         />
       )}
     </button>
